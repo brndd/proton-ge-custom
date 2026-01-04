@@ -1,0 +1,42 @@
+diff --git a/dlls/winex11.drv/keyboard.c b/dlls/winex11.drv/keyboard.c
+index 3907828201f..2a3f1c646cf 100644
+--- a/dlls/winex11.drv/keyboard.c
++++ b/dlls/winex11.drv/keyboard.c
+@@ -172,15 +172,15 @@ static const WORD main_key_vkey_azerty[MAIN_LEN] =
+    VK_OEM_102 /* the 102nd key (actually to the right of l-shift) */
+ };
+ 
+-static const WORD main_key_vkey_dvorak[MAIN_LEN] =
+-{
+-/* NOTE: this layout must concur with the scan codes layout above */
+-   VK_OEM_3,'1','2','3','4','5','6','7','8','9','0',VK_OEM_4,VK_OEM_6,
+-   VK_OEM_7,VK_OEM_COMMA,VK_OEM_PERIOD,'P','Y','F','G','C','R','L',VK_OEM_2,VK_OEM_PLUS,
+-   'A','O','E','U','I','D','H','T','N','S',VK_OEM_MINUS,VK_OEM_5,
+-   VK_OEM_1,'Q','J','K','X','B','M','W','V','Z',
+-   VK_OEM_102 /* the 102nd key (actually to the right of l-shift) */
+-};
++// static const WORD main_key_vkey_dvorak[MAIN_LEN] =
++// {
++// /* NOTE: this layout must concur with the scan codes layout above */
++//    VK_OEM_3,'1','2','3','4','5','6','7','8','9','0',VK_OEM_4,VK_OEM_6,
++//    VK_OEM_7,VK_OEM_COMMA,VK_OEM_PERIOD,'P','Y','F','G','C','R','L',VK_OEM_2,VK_OEM_PLUS,
++//    'A','O','E','U','I','D','H','T','N','S',VK_OEM_MINUS,VK_OEM_5,
++//    VK_OEM_1,'Q','J','K','X','B','M','W','V','Z',
++//    VK_OEM_102 /* the 102nd key (actually to the right of l-shift) */
++// };
+ 
+ /*** DEFINE YOUR NEW LANGUAGE-SPECIFIC MAPPINGS BELOW, SEE EXISTING TABLES */
+ 
+@@ -873,9 +873,9 @@ static const struct {
+  {0x0409, "United States keyboard layout", &main_key_US, &main_key_scan_qwerty, &main_key_vkey_qwerty},
+  {0x0409, "United States keyboard layout (phantom key version)", &main_key_US_phantom, &main_key_scan_qwerty, &main_key_vkey_qwerty},
+  /* Dvorak users tend to run QWERTY keyboards and rely on Windows/X11/Wayland to translate to the correct keysyms */
+- {0x0409, "United States keyboard layout (dvorak)", &main_key_US_dvorak, &main_key_scan_qwerty, &main_key_vkey_dvorak},
+- {0x0409, "United States keyboard layout (programmer dvorak)", &main_key_US_programmer_dvorak, &main_key_scan_qwerty, &main_key_vkey_dvorak},
+- {0x0409, "United States keyboard layout (dvorak with phantom key)", &main_key_US_dvorak_phantom, &main_key_scan_qwerty, &main_key_vkey_dvorak},
++ {0x0409, "United States keyboard layout (dvorak)", &main_key_US_dvorak, &main_key_scan_qwerty, &main_key_vkey_qwerty},
++ {0x0409, "United States keyboard layout (programmer dvorak)", &main_key_US_programmer_dvorak, &main_key_scan_qwerty, &main_key_vkey_qwerty},
++ {0x0409, "United States keyboard layout (dvorak with phantom key)", &main_key_US_dvorak_phantom, &main_key_scan_qwerty, &main_key_vkey_qwerty},
+  {0x0409, "United States International keyboard layout", &main_key_US_intl, &main_key_scan_qwerty, &main_key_vkey_qwerty},
+  {0x0809, "British keyboard layout", &main_key_UK, &main_key_scan_qwerty, &main_key_vkey_qwerty},
+  {0x0407, "German keyboard layout", &main_key_DE, &main_key_scan_qwerty, &main_key_vkey_qwertz},

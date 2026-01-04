@@ -313,6 +313,9 @@ apply_all_in_dir() {
     echo "WINE: --CUSTOM-- add WINE_HOSTBLOCK envvar to allow working around some problematic anticheats (notably eac)"
     apply_patch "../patches/proton/wine_host_block_envvar.patch"
 
+    echo "WINE: dvorak layout hack"
+    apply_patch "../patches/wine-dvorak-hack.patch"
+    
     echo "WINE: RUN AUTOCONF TOOLS/MAKE_REQUESTS"
     autoreconf -f
     ./tools/make_requests
